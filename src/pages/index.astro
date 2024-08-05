@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import score from "../assets/score.svg"
+import userIcon from "../assets/user-icon.svg"
+import certified from "../assets/certified.svg"
+import StatisticCard from "../components/molecules/StatisticCard.astro";
+import DashboardChart from "../components/organisms/DashboardChart"
+---
+
+<Layout title="dashboard">
+  <div class="p-6">
+    <div class="grid grid-cols-3 gap-6">
+      <!-- Total Students Card -->
+      <StatisticCard text="Total Students" total="513" image={userIcon}/>
+
+      <StatisticCard text="Total Certified Students" total="489" image={certified}/>
+
+      <StatisticCard text="Average Certification Score" total="84.62" image={score}/>
+
+    </div>
+    <DashboardChart client:only/>
+  </div>
+</Layout>

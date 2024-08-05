@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import up from "../../assets/up.svg"
+
+const {text, total, image} = Astro.props
+---
+
+<div class="bg-white shadow-md rounded-lg p-6">
+    <div class="flex justify-between items-center">
+      <div class="flex flex-col">
+        <div class="text-gray-500 text-sm">Total Students</div>
+        <div class="text-4xl font-bold mt-2">513</div> 
+      </div>
+      <Image alt="user icon" src={image}/>
+    </div>
+    <div class="text-green-500 flex items-center mt-2">
+      <Image alt={"up"} src={up}/>
+      <span class="ml-1 text-sm">8.5% Up from yesterday</span>
+    </div>
+</div>
